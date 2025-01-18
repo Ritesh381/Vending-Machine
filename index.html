@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/589957875e.js" crossorigin="anonymous"></script>
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="vending-machine">
+        <h1>The Snacks Point</h1>
+        <!-- Here create a grid of products where they will be stored -->
+        <div class="product-container">
+            <!-- <div class="product">
+                <img src="" alt="product-image">
+                <hr>
+                <p id="price">₹ 0.00</p>
+            </div> -->
+        </div>
+
+        <div class="panel">
+            <div class="screen">
+                <div class="default">
+                    <!-- Have all the items which are selected -->
+                    <div class="cart">
+                        <p id="cart">Cart
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </p>
+                        <p id="empty" style="margin-top: 40px;margin-left: 20px;">Cart Empty Add Items by clicking on them</p>
+                        <!-- <div class="cart-item">
+                            <div class="photo">
+                                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQB6gIMmZjBsucNGlPUqhWdDpLaeBlOEjkWAGxICjpDQ0Gu6UJmjjAfdlaNlWfUHelJJhaGTOygvKm2qX3u3SJF8xyMo6LsYo1dAbTcUo-E" alt="Product Image">
+                            </div>
+                            <hr>
+                            <p id="cart-price">₹ 20.00</p>
+                            <div class="counter">1</div>
+                            <div class="remove"><i class="fas fa-window-close"></i></div>
+                        </div> -->
+                        
+                    </div>
+
+
+                    <!-- Have the price and total -->
+                    <div class="bill-container">
+                        <div class="bill-row">
+                            <span>Cost</span>
+                            <span id="cost">₹ 0.00</span>
+                        </div>
+                        <div class="bill-row">
+                            <span>GST (To Nirmala Tai)</span>
+                            <span id="gst">₹ 0.00</span>
+                        </div>
+                        <div class="bill-row">
+                            <span>Discount</span>
+                            <span id="discount">₹ 0.00</span>
+                        </div>
+                        <hr>
+                        <div class="bill-row">
+                            <span>Total</span>
+                            <span id="total">₹ 0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button id="pay">PAY</button>
+
+                </div>
+
+                <!-- Changes the whole screen and give a QR code to complete payemnt -->
+                <div class="payment">
+                    <p id="title">SCAN TO PAY</p>
+                    <div class="QR">
+                        <img src="" alt="QR">
+                    </div>
+                    <p id="money">₹ 0.00</p>
+                    <p id="warning">Please complete the payment before <p id="timer">2:00</p></p>
+                    <button id="cancel">Cancel</button>
+                </div>
+                <!-- If payment is completed successfully -->
+                <div class="payment-success">
+                    <div class="happy feedback">
+                        <img src="https://media.tenor.com/9CvbhM5bUo4AAAAi/zzz.gif" alt="Happy Face">
+                    </div>
+                    <p id="thanks">Thanks for using my Vending Machine. </p>
+                        <p id="thanks"> Please collect your items from below PUSH area</p>
+                    <button class="main-menu">Main menu</button>
+                </div>
+                <!-- If payemtn failed -->
+                <div class="payment-failed">
+                    <img src="https://media.tenor.com/yjlnfb4WoIAAAAAM/heart-broke.gif" alt="Sad Face">
+                    <p id="failed">Looks like the payment failed.</p>
+                    <button class="try-again">Try again</button>
+                    <button class="main-menu">Main menu</button>
+                </div>
+            </div>
+
+            <div class="push">
+                <p>PUSH</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
