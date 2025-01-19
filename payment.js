@@ -8,10 +8,12 @@ const mainMenu = document.querySelectorAll(".main-menu")
 const tryAgain = document.querySelector(".try-again")
 
 pay.addEventListener("click",()=>{
-    main.style.display = "none"
-    payment.style.display = "flex";
-    paymentSuccess.style.display = "none";
-    paymentFailed.style.display = "none";
+    if(cartValue > 0){
+        main.style.display = "none"
+        payment.style.display = "flex";
+        paymentSuccess.style.display = "none";
+        paymentFailed.style.display = "none";
+    }
 })
 cancel.addEventListener("click", ()=>{
     main.style.display = "none"

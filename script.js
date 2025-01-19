@@ -3,25 +3,30 @@ const productContainer = document.querySelector('.product-container');
 const img = "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTgGIV8N6Ra8O1NwpDMMEzzFwV6tHeogzpT2nv0Ajui13SIC1FvjOMaFntWeoIQ7zvFO6tyz_D3CaLoEf16pQpcDHQUUworQinoVmDTd9D16aiOzM876T1W"
 
 // Get items from localStorage
-let products = JSON.parse(localStorage.getItem('product'));
-if (products) {
-    console.log(products);
-    Object.keys(products).forEach((key) => {
-        const product = products[key];
-        makeProduct(key, product.price, product.image, product.quantity);
-    });
-    let empty = 24 - Object.keys(products).length;
-    for (let i = 0; i < empty; i++) {
-        makeProduct("", "0", "");
-    }
-
-} else {
-    console.log("No object found in localStorage.");
-    products = {};
-    let empty = 24;
-    for (let i = 0; i < empty; i++) {
-        makeProduct("", "0", "");
-    }
+let products = JSON.parse(localStorage.getItem('product')); 
+if (products) { 
+    console.log(products); 
+}else{ 
+    console.log("No products found in localStorage, importing from data.json"); 
+    fetch("data.json") 
+    .then(response => response.json()) 
+    .then(fetchedProducts => { 
+        products = fetchedProducts; 
+        // Save the products in localStorage 
+        localStorage.setItem('product', JSON.stringify(products)); 
+    }) 
+    .catch(error => { 
+        console.error('Error loading the file:', error); 
+    }); 
+} 
+// Displaying the products in vending machine grid 
+Object.keys(products).forEach((key) => { 
+    const product = products[key]; 
+    makeProduct(key, product.price, product.image, product.quantity); 
+}); 
+let empty = 24 - Object.keys(products).length; 
+for (let i = 0; i < empty; i++) { 
+    makeProduct("", "0", ""); 
 }
 
 function makeProduct(id, price, image) {
