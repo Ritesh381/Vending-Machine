@@ -73,7 +73,7 @@ h1{
 
 .push{
     display: flex;
-    width: 400px;
+    width: 400px;   
     height: 150px;
     background-color: crimson;
     margin-top: 40px;
@@ -262,6 +262,27 @@ hr {
     width: 200px;
     font-size: 30px;
     margin-top: 40px;
+}
+
+.collect{
+    width: 400px;   
+    height: 150px;
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    /* width: 100%;
+    height: 100%; */
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.col{
+    display: flex;
+    position: relative;
+    width: 130px;
+    height: 130px;
+    background-color: inherit;
 }
 
 .payment, .payment-failed, .payment-success{
