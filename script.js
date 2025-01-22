@@ -22,7 +22,7 @@ if (products) {
 // Displaying the products in vending machine grid 
 Object.keys(products).forEach((key) => { 
     const product = products[key]; 
-    makeProduct(key, product.price, product.image, product.quantity); 
+    makeProduct(key, product.price, product.image); 
 }); 
 let empty = 24 - Object.keys(products).length; 
 for (let i = 0; i < empty; i++) { 
@@ -40,6 +40,7 @@ function makeProduct(id, price, image) {
     newItem.innerHTML = productTemplate;
     productContainer.appendChild(newItem);
     handleCart(newItem);
+    // newItem.addEventListener("click", handleCart);
 }
 // Handeling Cart
 
