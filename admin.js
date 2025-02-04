@@ -4,6 +4,7 @@ const adminButton = document.getElementById("admin");
 const loginButton = document.querySelector("#login-button");
 const userName = "admin"
 const password = "admin"
+const allProducts = document.querySelectorAll(".product")
 maxQuantitySnacks = 30
 maxQuantityChoco = 30
 maxQuantityJuice = 20
@@ -14,12 +15,14 @@ adminButton.addEventListener("click",()=>{
 })
 
 loginButton.addEventListener("click", ()=>{
-    const user = document.getElementById("username").value;
-    const psd = document.getElementById("password").value;
-    if(user === userName && psd === password){
+    const user = document.getElementById("username");
+    const psd = document.getElementById("password");
+    if(user.value === userName && psd.value === password){
         adminLogin.style.display = "none"
         admin.style.display = "flex"
         loadAdminControl();
+        user.value = ""
+        psd.value = ""
     }else{
         document.getElementById("login-feedback").textContent = "Username or Password is wrong"
     }
@@ -61,7 +64,9 @@ function loadItem(i){
     newItem.classList.add("product-cont")
     newItem.classList.add(i)
     admin.appendChild(newItem)
-    admin.appendChild(document.createElement("hr"))
+    const hr = document.createElement("hr")
+    hr.classList.add("adminHR")
+    admin.appendChild(hr)
     handleOperations(newItem)
 }
 // Handeling all the operations inside each product admin control
@@ -106,6 +111,7 @@ function handleOperations(product){
                 image.setAttribute("src", imagePath);
                 console.log("Image link working.");
                 proceedWithSave(price,quantity,imagePath,product.classList[1])
+                reloadMachineProduct(product.classList[1], imagePath, price)
             }
             testImage.onerror = function () {
                 alert("Image link dosen't worked. Didn't saved data. Please Try Again")
@@ -114,17 +120,37 @@ function handleOperations(product){
             testImage.setAttribute("src", imagePath)
         }else{
             proceedWithSave(price,quantity,oldImagePath,product.classList[1])
+            reloadMachineProduct(product.classList[1], oldImagePath, price)
         }
     })
 }
+// Saves everything in localStroage
 function proceedWithSave(price,quantity,imagePath,id){
     products[id].image = imagePath
     products[id].quantity = quantity
     products[id].price = price
     localStorage.setItem("product", JSON.stringify(products));
-    alert("Changes saved Upon logout changes will be visible on machine")
+    alert("Changes saved")
     const x = productContainer.querySelector("."+id)
     console.log(x)
 }
-
-loadAdminControl()
+// Logs out from admin controls
+document.querySelector(".logOut").addEventListener("click",()=>{
+    admin.style.display = "none"
+    main.style.display = "flex"
+    document.querySelectorAll(".product-cont").forEach((item)=>{
+        item.remove()
+    })
+    document.querySelectorAll(".adminHR").forEach((item)=>{
+        item.remove()
+    })
+})
+// Reflects the changes immediately on the machine
+function reloadMachineProduct(id,img,price){
+    allProducts.forEach((prod)=>{
+        if(prod.classList.contains(id)){
+            prod.querySelector("img").setAttribute("src", img)
+            prod.querySelector("#price").textContent = "₹ "+price+".00"
+        }
+    })
+}

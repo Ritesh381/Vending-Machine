@@ -361,7 +361,7 @@ hr {
 .admin{
     display: none;
     flex-direction: column;
-    overflow-y:auto;
+     overflow-y:auto;
 }
 
 
@@ -433,7 +433,12 @@ hr {
     margin-top: 15px;
 }
 
-
+.fa-sign-out{
+  align-self: flex-end;
+  position: relative;
+  top: 0px;
+  right: 0px;
+}
 
 
 
