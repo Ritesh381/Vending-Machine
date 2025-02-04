@@ -20,14 +20,14 @@
         </div>
 
         <div class="panel">
-            <div class="screen">
+            <div class="screen" >
                 <div class="default">
                     <!-- Have all the items which are selected -->
                     <div class="cart">
                         <p id="cart">Cart
                             <i class="fa-solid fa-cart-shopping"></i>
                         </p>
-                        <p id="empty" style="margin-top: 40px;margin-left: 20px;">Cart Empty Add Items by clicking on them</p>
+                        <p id="empty" style="margin-top: 40px;margin-left: 20px;">Cart Empty Add Items by clicking on items</p>
                         <!-- <div class="cart-item">
                             <div class="photo">
                                 <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQB6gIMmZjBsucNGlPUqhWdDpLaeBlOEjkWAGxICjpDQ0Gu6UJmjjAfdlaNlWfUHelJJhaGTOygvKm2qX3u3SJF8xyMo6LsYo1dAbTcUo-E" alt="Product Image">
@@ -48,7 +48,7 @@
                             <span id="cost">₹ 0.00</span>
                         </div>
                         <div class="bill-row">
-                            <span>GST (To Nirmala Tai)</span>
+                            <span>Service charge</span>
                             <span id="gst">₹ 0.00</span>
                         </div>
                         <div class="bill-row">
@@ -63,6 +63,7 @@
                     </div>
                     
                     <button id="pay">PAY</button>
+                    <button id="admin">ADMIN</button>
 
                 </div>
 
@@ -92,17 +93,48 @@
                     <button class="try-again">Try again</button>
                     <button class="main-menu">Main menu</button>
                 </div>
+
+                <div class="admin-login">
+                    <p>ADMIN LOGIN</p>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <input type="password" name="password" id="password" placeholder="password">
+                    <p id="login-feedback"></p>
+                    <button id="login-button">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+                </div>
+
+                <div class="admin">
+                    <p>ADMIN CONTROLS</p>
+                    <hr>
+                    <!-- <div class="product-cont">
+                        <div class="visual">
+                            <img src="./images/choco2.png" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="quantity det">
+                                <p>Quantity: </p>
+                                <button id="plus"> <i class="fa-solid fa-plus"></i> </button>
+                                <p id="quantity-num">00</p>
+                                <button id="minus"><i class="fa-solid fa-minus"></i></button>
+                            </div>
+                            <div class="price-change det">
+                                <p>Price: ₹</p>
+                                <input type="number" name="price" id="price-change" value="0">
+                            </div>
+                            <div class="image-change det">
+                                <p>Image: </p>
+                                <input type="text" name="imageLink" id="image-link" placeholder="Paste new image link here">
+                            </div>
+                            <button id="save">SAVE</button>
+                        </div>
+                    </div> -->
+                </div> 
+                
             </div>
 
             <div class="push">
                 <p>PUSH</p>
                 <div class="collect">
-                    <div class="first col">
-                        <img src="" alt="">
-                    </div>
-                    <div class="second col">
-                        <img src="" alt="">
-                    </div>
+                    <img src="" alt="">
                 </div>
             </div>
         </div>
@@ -112,5 +144,38 @@
     <script src="payment.js"></script>
     <script src="pushArea.js"></script>
     <script src="regret.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- 
+
+Whats next
+✔ Fix the bug which arises when we try to buy more than 1 time
+✔ Add some delay when the items are purchased (It instantly switches screens)
+✔ If a item and added and then removed from cart the messages disappears Fix that
+✔ Deduct the quantity of the item when the purchase is successful
+✔ Disable the eventListeners of the items when in payment mode
+✔ Add a button which with password, fills the quantity of items in vending machine
+Add Logout button on Admin Panel
+When changed from admin contol and saved changed should reflect immediately     
+Work on good UI
+Add some animations
+Add a screensaver on the screen and when clicked everything turns on, when inactivity the screensaver turns on 
+Add the QR code and try the backend thing
+If loaded into a new browsre the items don't load at the first time. Have to reload to load items
+
+
+
+
+
+
+
+
+
+
+
+-->

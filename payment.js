@@ -12,6 +12,7 @@ pay.addEventListener("click", () => {
   if (cartValue > 0) {
     money.textContent = "₹ " + cartValue + ".00";
     paymentScreen();
+    checkoutPage = true
   }
 });
 
@@ -27,6 +28,13 @@ mainMenu.addEventListener("click", () => {
   document.querySelector("#empty").textContent =
     "Cart Empty Add Items by clicking on them";
   resetTimer();
+  checkoutPage = false
+  cartList = [];
+  cartValue = 0;
+  updatePrice("0");
+  document.querySelectorAll(".cart-item").forEach((item) => {
+    item.remove();
+  });
 });
 
 function paymentScreen() {
@@ -107,3 +115,4 @@ qr.addEventListener("click", () => {
   successScreen();
   emptyCart();
 });
+
