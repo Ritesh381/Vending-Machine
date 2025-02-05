@@ -7,6 +7,7 @@ const cancel = document.querySelector("#cancel");
 const mainMenu = document.querySelector(".main-menu");
 const tryAgain = document.querySelector(".try-again");
 const money = document.querySelector("#money");
+const qr = document.querySelector(".QR");
 
 pay.addEventListener("click", () => {
   if (cartValue > 0) {
@@ -14,6 +15,12 @@ pay.addEventListener("click", () => {
     paymentScreen();
     checkoutPage = true
   }
+  qr.innerHTML = ""
+  let qrCode = new QRCode(qr, {
+    text: "https://ritesh381.github.io/Vending-Machine-Payment/?total="+cartValue,
+    width: 200,
+    height: 200
+  });
 });
 
 cancel.addEventListener("click", failedScreen);
@@ -69,7 +76,7 @@ function failedScreen() {
 let timerInterval;
 let remainingTime = 120;
 
-const qr = document.querySelector(".QR");
+
 const timer = document.querySelector("#timer");
 
 // Format seconds to MM:SS
