@@ -2,6 +2,7 @@ const adminLogin = document.querySelector(".admin-login");
 const admin = document.querySelector(".admin");
 const adminButton = document.getElementById("admin");
 const loginButton = document.querySelector("#login-button");
+const cancelLogin = document.querySelector("#login-cancel")
 const userName = "admin"
 const password = "admin"
 const allProducts = document.querySelectorAll(".product")
@@ -12,6 +13,11 @@ maxQuantityJuice = 20
 adminButton.addEventListener("click",()=>{
     main.style.display = "none"
     adminLogin.style.display = "flex"
+})
+
+cancelLogin.addEventListener("click", ()=>{
+    main.style.display = "flex"
+    adminLogin.style.display = "none"
 })
 
 loginButton.addEventListener("click", ()=>{
