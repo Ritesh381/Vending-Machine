@@ -25,17 +25,19 @@ button:hover {
 }
 
 .feedback{
-    
     display: flex;
-    text-align: left;
-}
-.completed{
-    display: none;
     flex-direction: column;
-    max-width: 425px;
+    max-width: 415px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+.completed{
+    display: none;
+    flex-direction: column;
+    max-width: 430px;
+    margin: auto;
 }
