@@ -108,28 +108,39 @@
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                     </div>
                     <hr>
+
+                    
                     <!-- <div class="product-cont">
+                        <div class="title">
+                            <div class="name"><p>Product Name</p></div>
+                            <div class="edit-name">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                        </div>
+                        <div class="detail">
                         <div class="visual">
-                            <img src="./images/choco2.png" alt="">
+                            <img src="${item.image}" alt="">
                         </div>
                         <div class="details">
                             <div class="quantity det">
                                 <p>Quantity: </p>
-                                <button id="plus"> <i class="fa-solid fa-plus"></i> </button>
-                                <p id="quantity-num">00</p>
                                 <button id="minus"><i class="fa-solid fa-minus"></i></button>
+                                <p id="quantity-num">${item.quantity}</p>
+                                <button id="plus"> <i class="fa-solid fa-plus"></i> </button>
                             </div>
                             <div class="price-change det">
                                 <p>Price: ₹</p>
-                                <input type="number" name="price" id="price-change" value="0">
+                                <input type="number" name="price" id="price-change" value="${item.price}">
                             </div>
                             <div class="image-change det">
                                 <p>Image: </p>
-                                <input type="text" name="imageLink" id="image-link" placeholder="Paste new image link here">
+                                <input type="text" class="image-link" name="imageLink" id="${i}" placeholder="New image link here">
                             </div>
                             <button id="save">SAVE</button>
                         </div>
+                    </div>
                     </div> -->
+
                 </div> 
                 
             </div>

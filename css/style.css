@@ -373,13 +373,38 @@ hr {
 
 .admin>hr{
     margin: 0;
-    margin-bottom: 20px;
     padding: 0;
 }
 
 .product-cont{
     display: flex;
+    flex-direction: column;
 }
+
+.title{
+   margin-left: 10px;
+   font-weight: bold;
+   margin-top: 0px;
+   display: flex;
+}
+
+.title p{
+  /* padding: 0; */
+  margin-top: 5px ;  
+  margin-bottom: 5px;
+}
+
+.edit-name{
+  margin-top: 5px ;  
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.detail{
+  display: flex;
+}
+
+
 
 .visual{
     position: relative;
@@ -439,10 +464,9 @@ hr {
   right: 0px;
 }
 
-
-
-
-
+.logOut{
+  width: 30px;
+}
 
 /* .default, .admin-login{
     display: none;
