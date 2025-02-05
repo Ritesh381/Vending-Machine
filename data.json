@@ -1,122 +1,146 @@
 {
     "snack1": {
+        "name": "Lays magic masala",
         "image": "images/chips1.png",
         "quantity": "30",
         "price": "20"
     },
     "snack2": {
+        "name": "Kurkure masala",
         "image": "images/chips4.png",
         "quantity": "30",
         "price": "20"
     },
     "snack3": {
+        "name": "Kurkure chatpata cheese",
         "image": "images/chips5.png",
         "quantity": "30",
         "price": "20"
     },
     "snack4": {
+        "name": "Salted Peanuts",
         "image": "images/chips11.png",
         "quantity": "30",
         "price": "20"
     },
     "snack5": {
+        "name": "Rings",
         "image": "images/chips6.png",
         "quantity": "30",
         "price": "15"
     },
     "snack6": {
+        "name": "CRAX Rings",
         "image": "images/chips7.png",
         "quantity": "30",
         "price": "20"
     },
     "snack7": {
+        "name": "BINGO original style",
         "image": "images/chips2.png",
         "quantity": "30",
         "price": "50"
     },
     "snack8": {
+        "name": "Nutty nuts",
         "image": "images/chips12.png",
         "quantity": "30",
         "price": "150"
     },
     "snack9": {
+        "name": "BINGO Mad Angels",
         "image": "images/chips3.png",
         "quantity": "30",
         "price": "60"
     },
     "snack10": {
+        "name": "Aloo Bhujiya",
         "image": "images/chips10.png",
         "quantity": "30",
         "price": "20"
     },
     "snack11": {
+        "name": "Bhujia SEV",
         "image": "images/chips9.png",
         "quantity": "30",
         "price": "20"
     },
     "snack12": {
+        "name": "Pop Chips Potato",
         "image": "images/chips8.png",
         "quantity": "30",
         "price": "40"
     },
     "choco1": {
+        "name": "Crispello",
         "image": "images/choco1.png",
         "quantity": "30",
         "price": "45"
     },
     "choco2": {
+        "name": "Snickers",
         "image": "images/choco2.png",
         "quantity": "30",
         "price": "35"
     },
     "choco3": {
+        "name": "Kinder Joy",
         "image": "images/choco3.png",
         "quantity": "30",
         "price": "60"
     },
     "choco4": {
+        "name": "5star 3D",
         "image": "images/choco4.png",
         "quantity": "30",
         "price": "45"
     },
     "choco5": {
+        "name": "KitKat",
         "image": "images/choco5.png",
         "quantity": "30",
         "price": "75"
     },
     "choco6": {
+        "name": "Feastables Milk Chocolate",
         "image": "images/choco6.png",
         "quantity": "30",
         "price": "499"
     },
     "juice1": {
+        "name": "Bisleri",
         "image": "images/juice1.png",
         "quantity": "20",
         "price": "15"
     },
     "juice2": {
+        "name": "Coca Cola Regular",
         "image": "images/juice2.png",
         "quantity": "20",
         "price": "50"
     },
     "juice3": {
+        "name": "Diet Coke",
         "image": "images/juice3.png",
         "quantity": "20",
         "price": "60"
     },
     "juice4": {
+        "name": "PRIME",
         "image": "images/juice4.png",
         "quantity": "20",
         "price": "399"
     },
     "juice5": {
+        "name": "Fanta",
         "image": "images/juice5.png",
         "quantity": "20",
         "price": "40"
     },
     "juice6": {
+        "name": "Red Bull",
         "image": "images/juice6.png",
         "quantity": "20",
-        "price": "100"
+        "price": "150"
     }
 }
