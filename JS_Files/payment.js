@@ -17,7 +17,7 @@ pay.addEventListener("click", () => {
   }
   qr.innerHTML = ""
   let qrCode = new QRCode(qr, {
-    text: "https://ritesh381.github.io/Vending-Machine/helper.html?total="+cartValue,
+    text: "https://ritesh381.github.io/Vending-Machine/payment.html?total="+cartValue,
     width: 200,
     height: 200
   });
