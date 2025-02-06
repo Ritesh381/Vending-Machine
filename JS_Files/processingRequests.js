@@ -23,6 +23,7 @@ async function insertOrder(cartvalue, dat) {
     console.log("Session ID: "+sessionID)   
 
     // Generating the qr code with session id as query of it
+    qr.innerHTML = ""
     let qrCode = new QRCode(qr, {
         text: "https://thesnackpoint.netlify.app/payment.html?id="+sessionID,
         width: 200,
