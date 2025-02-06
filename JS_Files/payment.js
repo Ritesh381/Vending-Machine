@@ -9,6 +9,7 @@ const tryAgain = document.querySelector(".try-again");
 const money = document.querySelector("#money");
 const qr = document.querySelector(".QR");
 
+// When PAY is clicked post data to database.
 pay.addEventListener("click", () => {
   if (cartValue > 0) {
     money.textContent = "₹ " + cartValue + ".00";
@@ -16,16 +17,16 @@ pay.addEventListener("click", () => {
     checkoutPage = true
   }
   qr.innerHTML = ""
-  let qrCode = new QRCode(qr, {
-    text: "https://thesnackpoint.netlify.app/payment.html?total="+cartValue,
-    width: 200,
-    height: 200
-  });
+  // Function is in processingRequests.js and saves data to databse
+  saveToSupabase()
 });
 
 cancel.addEventListener("click", failedScreen);
 
-tryAgain.addEventListener("click", paymentScreen);
+tryAgain.addEventListener("click", ()=>{
+  paymentScreen()
+  saveToSupabase()
+});
 
 mainMenu.addEventListener("click", () => {
   main.style.display = "flex";
@@ -114,12 +115,4 @@ function resetTimer() {
   updateTimerDisplay();
 }
 
-// Getting request that payment completed
-
-// Currently using QR click as OK response but later will be replaced by phone authentication
-
-qr.addEventListener("click", () => {
-  successScreen();
-  emptyCart();
-});
 

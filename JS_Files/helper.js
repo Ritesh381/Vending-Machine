@@ -15,3 +15,9 @@ pay.addEventListener('click', () => {
     main.style.display = "none";
     thanksScreen.style.display = "flex";
 });
+
+
+
+
+// Loading 
+

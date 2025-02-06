@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helper Website</title>
     <link rel="stylesheet" href="./css/helper.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <h1>Vending Machine Payment</h1>
     <div class="container">    
         <div class="cart">
-            
-        </div>
+            <!-- <div class="item">
+                <div class="visual">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <p id="name">Name</p>
+                    <p id="price">₹20x3=₹60</p> 
+                </div>
+            </div> -->
+        </div>  
 
         <p id="total"><strong>Total Amount: ₹</strong> <span id="number">199</span>.00</p>
         <button id="pay">Complete Payment 😊</button>
@@ -66,5 +75,6 @@
 
 
     <script src="./JS_Files/helper.js"></script>
+    <script src="./JS_Files/paymentLoadProducts.js"></script>
 </body>
 </html>
