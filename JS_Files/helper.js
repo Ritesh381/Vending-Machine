@@ -83,6 +83,7 @@ function loadCart(){
     cart_data.forEach((cartItem)=>{
         makeCartElement(cartItem.imageLink, cartItem.name, cartItem.price, cartItem.quantity)
     })
+    document.querySelector("#number").textContent = total_amount
 }
 
 function makeCartElement(imageLink, name, price, quant){

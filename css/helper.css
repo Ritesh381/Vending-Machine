@@ -62,7 +62,6 @@ button:hover {
     flex-direction: column;
     text-align:start;
     justify-content: center;
-    align-items: center;
 }
 
 .price{
