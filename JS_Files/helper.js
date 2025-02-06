@@ -102,6 +102,9 @@ function makeCartElement(imageLink, name, price, quant){
 
 function paymentCanceled(){
     updateOrderStatus(sessionID, "failed");
+    main.style.display = "none";
+    thanksScreen.style.display = "flex";
+    alert("payment failed")
 }
 
 function paymentSucess(){
