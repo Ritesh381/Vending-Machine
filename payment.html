@@ -43,7 +43,10 @@
 
     <div class="feedback">
         <h3>We value your feedback to improve our services.</h3>
-        <form action="/submit-feedback" method="POST">
+        <form id="feedbackForm">
+            <label for="name" >Your Name:</label>
+            <input type="text" name="name" id="User_name" required>
+            <br>
             <label for="rating">How satisfied were you with your purchase?</label><br>
             <input type="radio" id="very_satisfied" name="rating" value="Very Satisfied" required>
             <label for="very_satisfied">Very Satisfied</label><br>
