@@ -97,3 +97,7 @@ button:hover {
     height: 400px;
     overflow-y: auto;
 }
+.failed {
+    display: flex;
+    flex-direction: column;
+}

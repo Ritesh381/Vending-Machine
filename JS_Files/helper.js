@@ -3,6 +3,8 @@ const cancel = document.querySelector("#cancel");
 const submit = document.querySelector("#submit");
 const thanksScreen = document.querySelector(".completed");
 const main = document.querySelector(".container");
+const timer = document.querySelector(".timer");
+const failed = document.querySelector(".failed")
 
 const urlParams = new URLSearchParams(window.location.search);
 const sessionID = urlParams.get("id");
@@ -103,14 +105,17 @@ function makeCartElement(imageLink, name, price, quant){
 function paymentCanceled(){
     updateOrderStatus(sessionID, "failed");
     main.style.display = "none";
-    thanksScreen.style.display = "flex";
-    alert("payment failed")
+    failed.style.display = "flex";
+    timer.style.display = "none";
+    // alert("payment failed")
+    console.log("Payment failed")
 }
 
 function paymentSucess(){
     updateOrderStatus(sessionID, "completed");
     main.style.display = "none";
     thanksScreen.style.display = "flex";
+    timer.style.display = "none";
 }
 
 async function updateOrderStatus(id, newStatus) {
