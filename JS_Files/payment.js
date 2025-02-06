@@ -21,7 +21,10 @@ pay.addEventListener("click", () => {
   saveToSupabase()
 });
 
-cancel.addEventListener("click", failedScreen);
+cancel.addEventListener("click", ()=>{
+  failedScreen()
+  updateOrderStatus(sessionID, "failed")
+});
 
 tryAgain.addEventListener("click", ()=>{
   paymentScreen()

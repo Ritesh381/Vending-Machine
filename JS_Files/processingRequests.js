@@ -95,3 +95,19 @@ async function checkOrderStatus(sessionID) {
 function continueWithPayment(session){
     checkOrderStatus(session)
 }
+
+
+async function updateOrderStatus(id, newStatus) {
+    const { data, error } = await supabase
+      .from("PaymentSystem")  // Replace with your table name
+      .update({ status: newStatus })  // Update the 'status' column to the new value
+      .eq("id", id);  // Filter by the given id
+  
+    if (error) {
+      console.error("Error updating status:", error);
+      return null;
+    } else {
+      console.log("Order status updated:", data);
+      return data;  // Return the updated data
+    }
+  }

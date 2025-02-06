@@ -32,7 +32,7 @@ button:hover {
 }
 
 .feedback{
-    display: flex;
+    display: none;
     flex-direction: column;
     max-width: 380px;
     margin: auto;

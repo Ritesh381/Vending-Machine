@@ -33,75 +33,46 @@
     <div class="completed">
         <p><strong>Thanks for your purchase!</strong></p>
         <p><strong>Don't have a good day, Have a great day!</strong></p>
-        <div class="feedback">
-            <h3>We value your feedback to improve our services.</h3>
-            <form action="/submit-feedback" method="POST">
-                <label for="rating">How satisfied were you with your purchase?</label><br>
-                <input type="radio" id="very_satisfied" name="rating" value="Very Satisfied" required>
-                <label for="very_satisfied">Very Satisfied</label><br>
-                <input type="radio" id="satisfied" name="rating" value="Satisfied">
-                <label for="satisfied">Satisfied</label><br>
-                <input type="radio" id="neutral" name="rating" value="Neutral">
-                <label for="neutral">Neutral</label><br>
-                <input type="radio" id="unsatisfied" name="rating" value="Unsatisfied">
-                <label for="unsatisfied">Unsatisfied</label><br>
-                <input type="radio" id="very_unsatisfied" name="rating" value="Very Unsatisfied">
-                <label for="very_unsatisfied">Very Unsatisfied</label><br><br>
-        
-                <label for="product_quality">How would you rate the quality of the product?</label><br>
-                <select id="product_quality" name="product_quality" required>
-                    <option value="Excellent">Excellent</option>
-                    <option value="Good">Good</option>
-                    <option value="Average">Average</option>
-                    <option value="Poor">Poor</option>
-                </select><br><br>
-        
-                <label for="comments">Any additional comments or suggestions?</label><br>
-                <textarea id="comments" name="comments" placeholder="Your feedback..."></textarea><br><br>
-        
-                <button type="submit" id="submit">Submit Feedback</button>
-            </form>
-        </div>
     </div>
 
     <div class="failed">
         <h2 style="color: red;">PAYMENT FAILED</h2>
         <p>Looks like the payment failed.</p>
         <p>Please try again</p>
+    </div>
 
-        <div class="feedback">
-            <h3>We value your feedback to improve our services.</h3>
-            <form action="/submit-feedback" method="POST">
-                <label for="rating">How satisfied were you with your purchase?</label><br>
-                <input type="radio" id="very_satisfied" name="rating" value="Very Satisfied" required>
-                <label for="very_satisfied">Very Satisfied</label><br>
-                <input type="radio" id="satisfied" name="rating" value="Satisfied">
-                <label for="satisfied">Satisfied</label><br>
-                <input type="radio" id="neutral" name="rating" value="Neutral">
-                <label for="neutral">Neutral</label><br>
-                <input type="radio" id="unsatisfied" name="rating" value="Unsatisfied">
-                <label for="unsatisfied">Unsatisfied</label><br>
-                <input type="radio" id="very_unsatisfied" name="rating" value="Very Unsatisfied">
-                <label for="very_unsatisfied">Very Unsatisfied</label><br><br>
-        
-                <label for="product_quality">How would you rate the quality of the product?</label><br>
-                <select id="product_quality" name="product_quality" required>
-                    <option value="Excellent">Excellent</option>
-                    <option value="Good">Good</option>
-                    <option value="Average">Average</option>
-                    <option value="Poor">Poor</option>
-                </select><br><br>
-        
-                <label for="comments">Any additional comments or suggestions?</label><br>
-                <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Your feedback..."></textarea><br><br>
-        
-                <button type="submit" id="submit">Submit Feedback</button>
-            </form>
-        </div>
+    <div class="feedback">
+        <h3>We value your feedback to improve our services.</h3>
+        <form action="/submit-feedback" method="POST">
+            <label for="rating">How satisfied were you with your purchase?</label><br>
+            <input type="radio" id="very_satisfied" name="rating" value="Very Satisfied" required>
+            <label for="very_satisfied">Very Satisfied</label><br>
+            <input type="radio" id="satisfied" name="rating" value="Satisfied">
+            <label for="satisfied">Satisfied</label><br>
+            <input type="radio" id="neutral" name="rating" value="Neutral">
+            <label for="neutral">Neutral</label><br>
+            <input type="radio" id="unsatisfied" name="rating" value="Unsatisfied">
+            <label for="unsatisfied">Unsatisfied</label><br>
+            <input type="radio" id="very_unsatisfied" name="rating" value="Very Unsatisfied">
+            <label for="very_unsatisfied">Very Unsatisfied</label><br><br>
+    
+            <label for="product_quality">How would you rate the quality of the product?</label><br>
+            <select id="product_quality" name="product_quality" required>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Average">Average</option>
+                <option value="Poor">Poor</option>
+            </select><br><br>
+    
+            <label for="comments">Any additional comments or suggestions?</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Your feedback..."></textarea><br><br>
+    
+            <button type="submit" id="submit">Submit Feedback</button>
+        </form>
     </div>
 
 
     <script src="./JS_Files/helper.js"></script>
-    <!-- <script src="./JS_Files/paymentLoadProducts.js"></script> -->
+    <script src="./JS_Files/feedback.js"></script>
 </body>
 </html>

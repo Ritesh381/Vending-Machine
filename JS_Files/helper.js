@@ -5,6 +5,7 @@ const thanksScreen = document.querySelector(".completed");
 const main = document.querySelector(".container");
 const timer = document.querySelector(".timer");
 const failed = document.querySelector(".failed")
+const feedback = document.querySelector(".feedback")
 
 const urlParams = new URLSearchParams(window.location.search);
 const sessionID = urlParams.get("id");
@@ -86,6 +87,7 @@ function loadCart(){
         makeCartElement(cartItem.imageLink, cartItem.name, cartItem.price, cartItem.quantity)
     })
     document.querySelector("#number").textContent = total_amount
+    checkOrderStatus(sessionID)
 }
 
 function makeCartElement(imageLink, name, price, quant){
@@ -106,16 +108,20 @@ function paymentCanceled(){
     updateOrderStatus(sessionID, "failed");
     main.style.display = "none";
     failed.style.display = "flex";
+    feedback.style.display = "flex";
     timer.style.display = "none";
     // alert("payment failed")
     console.log("Payment failed")
+    clearInterval(statusCheckInterval);
 }
 
 function paymentSucess(){
     updateOrderStatus(sessionID, "completed");
     main.style.display = "none";
     thanksScreen.style.display = "flex";
+    feedback.style.display = "flex";
     timer.style.display = "none";
+    clearInterval(statusCheckInterval);
 }
 
 async function updateOrderStatus(id, newStatus) {
@@ -132,3 +138,40 @@ async function updateOrderStatus(id, newStatus) {
       return data;  // Return the updated data
     }
   }
+
+
+
+// Checking every 3 seconds if the payment is faild
+
+let statusCheckInterval;
+
+async function checkOrderStatus(sessionID) {
+    if (statusCheckInterval) {
+        clearInterval(statusCheckInterval); // Stop any existing interval if it's running
+    }
+
+    statusCheckInterval = setInterval(async () => {
+        let { data, error } = await supabase
+            .from('PaymentSystem')
+            .select('status')
+            .eq('id', sessionID)
+            .single();
+
+        if (error) {
+            console.error("Error fetching order status:", error);
+            clearInterval(statusCheckInterval); // Stop the interval if there's an error
+        } else {
+            console.log("Current status:", data.status);
+
+            if (data.status !== 'pending') {
+                console.log("Order status has changed to:", data.status);
+                clearInterval(statusCheckInterval);
+                if(data.status == "failed"){
+                    paymentCanceled()
+                }else{
+                    failedScreen()
+                }
+            }
+        }
+    }, 3000); // Check every 3 seconds
+}
