@@ -34,7 +34,7 @@ button:hover {
 .feedback{
     display: flex;
     flex-direction: column;
-    max-width: 415px;
+    max-width: 380px;
     margin: auto;
     padding: 20px;
     padding-top: 0px;
@@ -48,6 +48,10 @@ button:hover {
     flex-direction: column;
     max-width: 430px;
     margin: auto;
+}
+
+#comments{
+    max-width: 370px;
 }
 
 .item{
