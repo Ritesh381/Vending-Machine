@@ -106,6 +106,8 @@ function paymentCanceled(){
 
 function paymentSucess(){
     updateOrderStatus(sessionID, "completed");
+    main.style.display = "none";
+    thanksScreen.style.display = "flex";
 }
 
 async function updateOrderStatus(id, newStatus) {
