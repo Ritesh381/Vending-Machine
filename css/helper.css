@@ -98,6 +98,6 @@ button:hover {
     overflow-y: auto;
 }
 .failed {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
