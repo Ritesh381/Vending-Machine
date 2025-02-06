@@ -8,7 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-    <h1>Vending Machine Payment</h1>
+    <div class="first">
+        <h1>Vending Machine Payment</h1>
+        <div class="timer">
+            <p>Complete payment before</p>
+            <p id="timer">00:00</p>
+        </div>
+    </div>
     <div class="container">    
         <div class="cart">
             <!-- <div class="item">
@@ -21,22 +27,10 @@
                 </div>
             </div> -->
         </div>  
-
         <p id="total"><strong>Total Amount: ₹</strong> <span id="number">199</span>.00</p>
         <button id="pay">Complete Payment 😊</button>
         <button id="cancel">Cancel Payment 🥺</button>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="completed">
         <p><strong>Thanks for your purchase!</strong></p>
@@ -75,6 +69,6 @@
 
 
     <script src="./JS_Files/helper.js"></script>
-    <script src="./JS_Files/paymentLoadProducts.js"></script>
+    <!-- <script src="./JS_Files/paymentLoadProducts.js"></script> -->
 </body>
 </html>
