@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 20px;
 }
 p{
     font-size: 20px;
@@ -104,4 +103,36 @@ button:hover {
 .failed {
     display: none;
     flex-direction: column;
+}
+
+.upi{
+    height: auto;
+    width: auto;
+}
+
+.upi img{
+    object-fit: contain;
+    height: 500px;
+    width: auto;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-color: gray;
+    padding: 10px;
+}
+.contact{
+    font-size: 30px;
+}
+
+.feedbackSubmitted{
+    display: none;
+    margin: auto;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
 }

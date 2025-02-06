@@ -29,5 +29,12 @@ async function saveFeedbackToSupabase(){
     }
     else{
         console.log("Feedback saved to database")
+        nextStep()
     }
+}
+
+function nextStep(){
+    feedback.style.display = "none";
+    document.querySelector(".feedbackSubmitted").style.display = "flex"
+    document.querySelector(".failed").style.display = "none"
 }
