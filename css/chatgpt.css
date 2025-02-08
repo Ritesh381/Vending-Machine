@@ -1,0 +1,544 @@
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a192f; /* Dark blue background */
+    color: #ccd6f6; /* Light text for contrast */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .vending-machine {
+    position: relative;
+    background-color: #112240; /* Dark blue for the vending machine body */
+    display: flex;
+    flex-direction: row; /* Keep original layout for desktop */
+    padding: 50px;
+    width: 1720px;
+    height: 850px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    color: #64ffda; /* Teal accent for the title */
+    font-size: 2.5rem;
+  }
+  
+  /* Product Container */
+  .product-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1220px;
+    height: 800px;
+    background-color: #1f4068; /* Darker blue for the product grid */
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product {
+    width: 180px;
+    height: 180px;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #233554; /* Dark blue for product cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product > img {
+    width: 160px;
+    height: 140px;
+    margin-top: 10px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .product > p {
+    margin-top: 0px;
+    color: #ccd6f6; /* Light text for product price */
+  }
+  
+  /* Panel and Screen */
+  .panel {
+    margin-left: 50px;
+  }
+  
+  .screen {
+    width: 400px;
+    height: 600px;
+    background-color: #1f4068; /* Darker blue for the screen */
+    border: 10px solid #112240; /* Matching border color */
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .push {
+    display: flex;
+    width: 400px;
+    height: 150px;
+    background-color: #64ffda; /* Teal accent for the push area */
+    margin-top: 40px;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+  }
+  
+  .push > p {
+    margin: 0;
+    padding: 0;
+    font-size: 120px;
+    font-weight: bold;
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  /* Default Screen */
+  .default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cart {
+    height: 210px;
+    border: 2px solid #64ffda; /* Teal accent for the cart */
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  #cart {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: #64ffda; /* Teal accent for the cart title */
+  }
+  
+  .cart-item {
+    margin-top: 35px;
+    position: relative;
+    height: 150px;
+    width: 100px;
+    border: 2px solid #64ffda; /* Teal accent for cart items */
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  
+  .photo > img {
+    margin-left: 5px;
+    height: 100px;
+    width: 90px;
+    margin-top: 5px;
+    object-fit: contain;
+  }
+  
+  #cart-price {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-top: -5px;
+    margin-left: 5px;
+    color: #ccd6f6; /* Light text for price */
+  }
+  
+  .counter {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    border: 1px solid #64ffda; /* Teal accent for the counter */
+    background-color: #ffcc00; /* Yellow for the counter */
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+  }
+  
+  .remove {
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    font-size: 20px;
+    color: #64ffda; /* Teal accent for the remove icon */
+  }
+  
+  .bill-container {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .bill-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ccd6f6; /* Light text for bill details */
+  }
+  
+  .bill-row span {
+    font-size: 16px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #64ffda; /* Teal accent for the divider */
+    margin: 10px 0;
+  }
+  
+  #pay {
+    font-size: 50px;
+    font-weight: bold;
+    box-shadow: 0 9px #999;
+    width: 200px;
+    background-color: #64ffda; /* Teal accent for the pay button */
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  #pay:active {
+    background-color: #52d1b2; /* Darker teal for active state */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  #pay:hover {
+    background-color: #52d1b2; /* Darker teal for hover state */
+  }
+  
+  /* Payment Screen */
+  .payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  #title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #64ffda; /* Teal accent for the title */
+  }
+  
+  #money {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ccd6f6; /* Light text for the amount */
+  }
+  
+  #warning {
+    margin-top: -10px;
+    font-size: 20px;
+    color: #ccd6f6; /* Light text for the warning */
+  }
+  
+  #timer {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #64ffda; /* Teal accent for the timer */
+  }
+  
+  #cancel {
+    width: 150px;
+    font-size: 30px;
+    background-color: #64ffda; /* Teal accent for the cancel button */
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  .payment-success,
+  .payment-failed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .happy > img {
+    height: 300px;
+    width: 300px;
+    margin-top: -50px;
+  }
+  
+  #thanks,
+  #failed {
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    color: #ccd6f6; /* Light text for messages */
+  }
+  
+  .main-menu,
+  .try-again {
+    width: 200px;
+    font-size: 30px;
+    margin-top: 40px;
+    background-color: #64ffda; /* Teal accent for buttons */
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  /* Admin Panel */
+  .admin-login {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .admin-login > p {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #64ffda; /* Teal accent for the title */
+  }
+  
+  .admin-login > input {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #64ffda; /* Teal accent for input borders */
+    border-radius: 5px;
+    background-color: #1f4068; /* Darker blue for input background */
+    color: #ccd6f6; /* Light text for input */
+  }
+  
+  #login-feedback {
+    font-size: 20px;
+    font-weight: normal;
+    color: #ff6b6b; /* Red for error messages */
+  }
+  
+  #login-button,
+  #login-cancel {
+    font-size: 20px;
+    margin-bottom: 30px;
+    background-color: #64ffda; /* Teal accent for buttons */
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  .admin {
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .admin > p {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    align-self: center;
+    color: #64ffda; /* Teal accent for the title */
+  }
+  
+  .admin > hr {
+    border: none;
+    border-top: 1px solid #64ffda; /* Teal accent for the divider */
+    margin: 10px 0;
+  }
+  
+  .product-cont {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f4068; /* Darker blue for product containers */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 0px;
+    display: flex;
+    color: #64ffda; /* Teal accent for the title */
+  }
+  
+  .title p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .edit-name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  
+  .detail {
+    display: flex;
+  }
+  
+  .visual {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-right: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #64ffda; /* Teal accent for the border */
+    border-radius: 10px;
+  }
+  
+  .visual > img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+  
+  .det {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+    color: #ccd6f6; /* Light text for details */
+  }
+  
+  #quantity-num {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .det > button {
+    height: 20px;
+    background-color: #64ffda; /* Teal accent for buttons */
+    color: #0a192f; /* Dark blue text for contrast */
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #price-change {
+    width: 40px;
+    margin-left: -5px;
+    background-color: #1f4068; /* Darker blue for input background */
+    color: #ccd6f6; /* Light text for input */
+    border: 1px solid #64ffda; /* Teal accent for the border */
+    border-radius: 5px;
+  }
+  
+  .image-link {
+    width: 140px;
+    background-color: #1f4068; /* Darker blue for input background */
+    color: #ccd6f6; /* Light text for input */
+    border: 1px solid #64ffda; /* Teal accent for the border */
+    border-radius: 5px;
+  }
+  
+  #save {
+    margin-top: 15px;
+    background-color: #64ffda; /* Teal accent for the save button */
+    color: #0a192f; /* Dark blue text for contrast */
+  }
+  
+  .fa-sign-out {
+    align-self: flex-end;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    color: #64ffda; /* Teal accent for the logout icon */
+  }
+  
+  .logOut {
+    width: 30px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .vending-machine {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+      width: 90%;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .product-container {
+      width: 100%;
+      height: auto;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+  
+    .product {
+      width: 45%; /* Adjust width for smaller screens */
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  
+    .panel {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  
+    .screen {
+      width: 100%;
+      height: 400px; /* Adjusted height for smaller screens */
+    }
+  
+    .push {
+      width: 100%;
+      height: 100px; /* Adjusted height for smaller screens */
+      margin-left: 0;
+    }
+  
+    .push > p {
+      font-size: 80px; /* Adjusted font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-container {
+      grid-template-columns: repeat(1, 1fr); /* 1 column for phones */
+    }
+  
+    .product {
+      width: 90%; /* Adjust width for smaller screens */
+      margin-left: 5%;
+    }
+  
+    .screen {
+      height: 300px; /* Adjusted height for smaller screens */
+    }
+  
+    .push {
+      height: 80px; /* Adjusted height for smaller screens */
+    }
+  
+    .push > p {
+      font-size: 60px; /* Adjusted font size for smaller screens */
+    }
+  }
+  
+.admin,
+.admin-login,
+.payment-success,
+.payment-failed,
+.payment {
+  display: none;
+}

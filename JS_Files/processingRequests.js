@@ -30,6 +30,7 @@ async function insertOrder(cartvalue, dat) {
         height: 200
     });
     continueWithPayment(sessionID)
+    
   }
 }
 
@@ -86,7 +87,7 @@ async function checkOrderStatus(sessionID) {
                 }
             }
         }
-    }, 3000); // Check every 3 seconds
+    }, 1000); // Check every 3 seconds
 }
 
 
@@ -95,7 +96,6 @@ async function checkOrderStatus(sessionID) {
 function continueWithPayment(session){
     checkOrderStatus(session)
 }
-
 
 async function updateOrderStatus(id, newStatus) {
     const { data, error } = await supabase
@@ -108,6 +108,6 @@ async function updateOrderStatus(id, newStatus) {
       return null;
     } else {
       console.log("Order status updated:", data);
-      return data;  // Return the updated data
+      return data;
     }
   }

@@ -9,6 +9,8 @@ const feedback = document.querySelector(".feedback")
 
 const urlParams = new URLSearchParams(window.location.search);
 const sessionID = urlParams.get("id");
+let success = false
+
 
 pay.addEventListener("click", paymentSucess);
 cancel.addEventListener("click", paymentCanceled);
@@ -60,7 +62,7 @@ function loadTimer(){
       const now = new Date();
       const timeLeft = endTime - now;  // Time remaining in milliseconds
   
-      if (timeLeft <= 0) {
+      if (timeLeft <= 0 && !success) {
         clearInterval(timerInterval);  // Stop the interval when the timer reaches 0
         timerElement.innerHTML = "00:00";
         console.log("timer ended");
@@ -75,9 +77,7 @@ function loadTimer(){
       }
     };
 
-    // Update the timer every second
     const timerInterval = setInterval(updateTimer, 1000);
-    // Initialize the first update
     updateTimer();
 }
 
@@ -116,6 +116,7 @@ function paymentCanceled(){
 }
 
 function paymentSucess(){
+    success = true
     updateOrderStatus(sessionID, "completed");
     main.style.display = "none";
     thanksScreen.style.display = "flex";

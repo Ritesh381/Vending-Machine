@@ -219,10 +219,13 @@ hr {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  text-align: center;
 }
 
 #title {
   font-size: 40px;
+  margin: 0;
+  margin-top: 10px;
   font-weight: bold;
 }
 
