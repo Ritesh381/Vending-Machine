@@ -42,8 +42,8 @@ h1 {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  
-  /* justify-content: center; */
+  cursor: pointer;
+  position: relative;
 }
 
 .product > img {
@@ -51,8 +51,26 @@ h1 {
   height: 140px;
   margin-top: 10px;
   object-fit: contain;
-  /* background-color: white; */
   background-color: rgb(218, 176, 176);
+}
+
+.product-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+}
+
+.product:hover .product-name {
+  display: flex;
 }
 
 .product > p {

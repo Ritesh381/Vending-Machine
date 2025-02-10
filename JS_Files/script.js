@@ -1,14 +1,12 @@
-// Making the geid of vending machine
 const productContainer = document.querySelector(".product-container");
 let checkoutPage = false;
-// Get items from localStorage
 let products = JSON.parse(localStorage.getItem("product"));
+
 if (products && Object.keys(products).length > 0) {
   console.log(products);
-  // Display the products if they exist in localStorage
   Object.keys(products).forEach((key) => {
     const product = products[key];
-    makeProduct(key, product.price, product.image);
+    makeProduct(key, product.price, product.image, product.name);
   });
 } else {
   console.log("No products found in localStorage, importing from data.json");
@@ -17,24 +15,24 @@ if (products && Object.keys(products).length > 0) {
     .then((fetchedProducts) => {
       localStorage.setItem("product", JSON.stringify(fetchedProducts));
       console.log("Data stored to localStorage");
-      // Now display the products after fetching them
       Object.keys(fetchedProducts).forEach((key) => {
         const product = fetchedProducts[key];
-        makeProduct(key, product.price, product.image);
+        makeProduct(key, product.price, product.image, product.name);
       });
     })
     .catch((error) => {
       console.error("Error loading the file:", error);
     });
 }
-
+// Edge case
 let empty = 24 - Object.keys(products).length;
 for (let i = 0; i < empty; i++) {
-  makeProduct("", "0", "");
+  makeProduct("", "0", "","");
 }
 
-function makeProduct(id, price, image) {
+function makeProduct(id, price, image,name) {
   const productTemplate = `
+    <div class="product-name">${name}</div>
     <img src="${image}" alt="empty" style="border: solid black 3px; border-radius: 20px;">
     <p id="price">₹ ${price}.00</p>
     `;
@@ -47,7 +45,6 @@ function makeProduct(id, price, image) {
 }
 
 // Handeling Cart
-
 const cart = document.querySelector(".cart");
 let cartList = [];
 let cartValue = 0;

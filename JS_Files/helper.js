@@ -142,7 +142,7 @@ async function updateOrderStatus(id, newStatus) {
 
 
 
-// Checking every 3 seconds if the payment is faild
+// Checking every 1 seconds if the payment is faild
 
 let statusCheckInterval;
 
@@ -174,5 +174,5 @@ async function checkOrderStatus(sessionID) {
                 }
             }
         }
-    }, 3000); // Check every 3 seconds
+    }, 1000);
 }
